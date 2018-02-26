@@ -1,8 +1,90 @@
-# Intuit Crafts Demo
+:toc:
+:toc-placement!:
+:toc-position: left
+:toclevels: 5
+:imagesdir: images
+:source-highlighter: highlight
+ifdev::env-github[:outfilesuffix: .adoc]
+
+= Intuit Crafts Demo
+
+Test Assignment from Intuit
+
+== Introduction
 
 This project demonstrates a website for popular streaming service that displays different Movies and TV shows on their page.
 
 It provides a rating system where user can upvote or downvote their selection.
 
 Website provide upvote and downvote count to the user for different streaming service shown.
+
+== List of Technologies Used
+
+* JAVA
+* Spring Boot
+* HTML
+* Thymeleaf
+* H2 DB
+* Docker
+* Maven
+* Fabric Maven Plugin
+
+== Build
+
+You can build the project using command below:
+
+[source]
+----
+mvn clean install
+----
+
+== Run
+
+You can run the command multiple ways:
+
+* Run as spring boot app
+
+[source]
+----
+mvn spring-boot:run
+----
+
+* Run as Java Commmand
+
+[source]
+----
+cd target
+java -jar testassignment
+----
+
+* Build Docker image as a Build
+
+This command will create the docker image on the fly.
+
+[source]
+----
+mvn clean install -Pdocker
+----
+
+
+Run the docker image:
+
+[source]
+----
+ mvn package -Pdocker docker:run
+----
+
+
+== Accessing the application
+
+Open below URL on your Browser
+
+```http://localhost:8080/index```
+
+
+
+
+
+
+
 
