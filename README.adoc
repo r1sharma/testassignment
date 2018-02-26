@@ -4,7 +4,6 @@
 :toclevels: 5
 :imagesdir: images
 :source-highlighter: highlight
-ifdev::env-github[:outfilesuffix: .adoc]
 
 = Intuit Crafts Demo
 
@@ -79,7 +78,11 @@ Run the docker image:
 
 Open below URL on your Browser
 
-```http://localhost:8080/index```
+[source]
+----
+http://localhost:8080/index
+----
+
 
 
 
