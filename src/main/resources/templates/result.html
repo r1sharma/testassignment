@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:dt="http://www.thymeleaf.org/dandelion/datatables"><head>
+
+    <title>Voting Results</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+	h2 {color:blue;}
+#resultTable {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#resultTable td, #myTableId th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#resultTable tr:nth-child(even){background-color: #f2f2f2;}
+
+#resultTable tr:hover {background-color: #ddd;}
+
+#resultTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+    </style>
+</head>
+<body>
+<h2>Result Page</h2>
+
+<table id="resultTable" dt:table="true">
+    <tr>
+        <th>Selected</th>
+        <th>Vote</th>
+        <th>Vote Count</th>
+    </tr>
+    <tr>
+        <td th:text="${id}"></td>
+        <td th:text="${vote}"></td>
+        <td th:text="${votecount}"></td>
+    </tr>
+</table>
+
+<button type="button" onclick="window.history.go(-1);">Back</button>
+
+</body>
+</html>

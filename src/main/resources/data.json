@@ -1,0 +1,27 @@
+{
+  "movies":[
+    {
+      "id":"Stranger Things",
+      "description":"When a young boy disappears, his mother, a police chief, and his friends must confront terrifying forces in order to get him back.",
+      "category":[
+        "Popular",
+        "Horor"
+      ]
+    },
+    {
+      "id":"Doctor Strange",
+      "description":"After a neurosurgeon loses the use of this hangs he meets a mystical mentor who helps him harness magic to become the most powerful sorcerer on Earth.",
+      "category":[
+        "Action"
+      ]
+    },
+    {
+      "id":"Planet Earth",
+      "description":"This landmark series transports nature lovers all over the earth.",
+      "category":[
+        "Documentary"
+      ]
+    }
+
+  ]
+}

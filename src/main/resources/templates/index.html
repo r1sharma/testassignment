@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:dt="http://www.thymeleaf.org/dandelion/datatables">
+<head></head>
+<style>
+#myTableId {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#myTableId td, #myTableId th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#myTableId tr:nth-child(even){background-color: #f2f2f2;}
+
+#myTableId tr:hover {background-color: #ddd;}
+
+#myTableId th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+</style>
+<body>
+<div class="span12">
+    <table id="myTableId" dt:table="true">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Rating</th>
+        </tr>
+        </thead>
+        <tbody>
+        <th:block th:each="categoryLs : ${category.getTypeofShow()}">
+            <th:block th:each="detalsls : ${categoryLs.getMovie()}">
+                <tr th:each="item : ${detalsls}">
+                    <td th:text="${item.name}"></td>
+                    <td th:text="${item.description}"></td>
+                    <td th:text="${item.category}"></td>
+                    <form method="POST" th:action="@{/index/vote}">
+                        <input type="hidden" name="id" id="id" th:value="${item.name}" />
+                        <input type="hidden" name="desc" id="desc" th:value="${item.description}" />
+                        <input type="hidden" name="category" id="categoy" th:value="${item.category}" />
+                        <td><input type="image" src="up.png" name="vote" th:value="upvote" alt="UpVote"/><input type="image" src="down.png" name="vote" th:value="downvote" alt="DownVote"/></td>
+
+<!--
+                        <td><input type="submit"><img src="down.png" name="vote" th:value="downvote" />DownVote</input></td>
+-->
+                    </form>
+                </tr>
+            </th:block>
+        </th:block>
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
