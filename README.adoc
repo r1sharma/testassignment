@@ -1,0 +1,8 @@
+# Intuit Crafts Demo
+
+This project demonstrates a website for popular streaming service that displays different Movies and TV shows on their page.
+
+It provides a rating system where user can upvote or downvote their selection.
+
+Website provide upvote and downvote count to the user for different streaming service shown.
+
