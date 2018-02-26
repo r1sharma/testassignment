@@ -83,11 +83,8 @@ Open below URL on your Browser
 http://localhost:8080/index
 ----
 
+image:https://raw.githubusercontent.com/r1sharma/testassignment/master/images/index.png[index]
 
+Results can be seen below:
 
-
-
-
-
-
-
+image:https://github.com/r1sharma/testassignment/raw/master/images/result.png[result]
