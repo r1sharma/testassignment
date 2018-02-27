@@ -3,9 +3,14 @@ package com.example.testassignment.service;
 import com.example.testassignment.model.Category;
 import com.example.testassignment.model.Detail;
 import com.example.testassignment.model.Movie;
+import org.apache.commons.io.IOUtils;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 
 import java.io.FileReader;
@@ -16,6 +21,9 @@ import java.util.Map;
 @Service
 public class VotingServiceImpl implements VotingService {
 
+    @Autowired
+    private ResourceLoader resourceLoader;
+
     @Override
     public Category getVotingData() {
         Movie movie = new Movie();
@@ -24,8 +32,10 @@ public class VotingServiceImpl implements VotingService {
         String desc = null;
         ArrayList<Detail> detailArrayList = new ArrayList<Detail>();
         ArrayList<Movie> movieArrayList = new ArrayList<Movie>();
+
         try {
-            Object obj = new JSONParser().parse(new FileReader("src/main/resources/data.json"));
+            String content = IOUtils.toString(resourceLoader.getResource("classpath:data.json").getInputStream());
+            Object obj = new JSONParser().parse(content);
             JSONObject jo = (JSONObject) obj;
             JSONArray movies = (JSONArray) jo.get("movies");
             Iterator movieIterator = movies.iterator();
