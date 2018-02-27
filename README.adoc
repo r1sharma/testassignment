@@ -27,6 +27,9 @@ Website provide upvote and downvote count to the user for different streaming se
 * Docker
 * Maven
 * Fabric Maven Plugin
+* AWS Elastic BeanStalk
+* Elastic BeanStack CLI
+
 
 == Build
 
@@ -88,3 +91,35 @@ image:https://raw.githubusercontent.com/r1sharma/testassignment/master/images/in
 Results can be seen below:
 
 image:https://github.com/r1sharma/testassignment/raw/master/images/result.png[result]
+
+
+== Provisioning on AWS
+
+Used AWS Elastic Beanstalk to provision the spring boot application
+
+Provisioning steps:
+
+* Navigate to elasticbeanstalk folder
+
+[source]
+----
+cd .elasticbeanstalk
+----
+
+* Run below command to create infrastructure
+[source]
+----
+eb create --verbose
+----
+
+* Run below command to terminate infrastructure
+[source]
+----
+eb terminate --verbose
+----
+
+* Setting up eb-client[AWS Elastic BeanStalk command line Utility] locally:
+[source]
+----
+pip install awsebcli --upgrade --user
+----

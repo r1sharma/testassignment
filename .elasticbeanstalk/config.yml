@@ -1,0 +1,15 @@
+branch-defaults:
+  master:
+    environment: dev
+deploy:
+  artifact: ../target/testassignment-0.0.1-SNAPSHOT.jar
+global:
+  application_name: testassignment
+  branch: null
+  default_ec2_keyname: rahul-test
+  default_platform: Java 8
+  default_region: us-east-1
+  profile:
+  repository: null
+  sc: git
+  workspace_type: Application
