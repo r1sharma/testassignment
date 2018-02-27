@@ -83,7 +83,7 @@ Open below URL on your Browser
 
 [source]
 ----
-http://localhost:8080/index
+http://localhost:5000/index
 ----
 
 image:https://raw.githubusercontent.com/r1sharma/testassignment/master/images/index.png[index]
