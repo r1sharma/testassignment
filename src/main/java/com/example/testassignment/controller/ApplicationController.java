@@ -29,12 +29,19 @@ public class ApplicationController {
         this.votingService = votingService;
     }
 
+
+    /*
+    This method renders the index page to display list of movies with voting buttons
+     */
     @RequestMapping(value ={"/index"}, method = RequestMethod.GET)
     public String index(Model model) {
         model.addAttribute("category",votingService.getVotingData());
         return "index";
     }
 
+    /*
+    This method renders the result page on click of voting buttons
+     */
     @RequestMapping(value = "/index/vote", method = RequestMethod.POST)
     public String vote(@RequestParam("id") String id, @RequestParam("desc") String desc, @RequestParam("category") String category, @RequestParam(value = "vote") String vote, Model model) {
 
@@ -47,6 +54,7 @@ public class ApplicationController {
         ArrayList<String> categoryList = new ArrayList<String>();
         categoryList.add(category);
 
+        //save data to h2 db
         votingRepository.save(new Detail(id,desc,categoryList,vote));
 
 

@@ -27,6 +27,7 @@
 }
 </style>
 <body>
+<!--Dynamic rendering of table in order to display the movies or tv shows -->
 <div class="span12">
     <table id="myTableId" dt:table="true">
         <thead>
@@ -49,10 +50,6 @@
                         <input type="hidden" name="desc" id="desc" th:value="${item.description}" />
                         <input type="hidden" name="category" id="categoy" th:value="${item.category}" />
                         <td><input type="image" src="up.png" name="vote" th:value="upvote" alt="UpVote"/><input type="image" src="down.png" name="vote" th:value="downvote" alt="DownVote"/></td>
-
-<!--
-                        <td><input type="submit"><img src="down.png" name="vote" th:value="downvote" />DownVote</input></td>
--->
                     </form>
                 </tr>
             </th:block>

@@ -24,6 +24,9 @@ public class VotingServiceImpl implements VotingService {
     @Autowired
     private ResourceLoader resourceLoader;
 
+    /*
+    Retrieve Movie, TV Show information from data.json file present in resources folder
+     */
     @Override
     public Category getVotingData() {
         Movie movie = new Movie();
